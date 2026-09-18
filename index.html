@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NCLEX Exam: Concepts of Care for Patients With Cardiac Conditions (Chapter 29)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans min-h-screen flex flex-col">
+
+  <!-- Navigation Header -->
+  <header class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-3">
+        <div class="bg-red-500 p-2 rounded-lg text-white shadow">
+          <i class="fa-solid fa-heart-pulse text-xl"></i>
+        </div>
+        <div>
+          <h1 class="text-lg font-bold tracking-tight">NCLEX Mastery: Cardiac Care</h1>
+          <p class="text-xs text-blue-200">Chapter 29: Care for Patients With Cardiac Conditions</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-6 text-sm">
+        <div class="flex flex-col text-right">
+          <span class="text-xs text-blue-200 uppercase tracking-wider font-semibold">Progress</span>
+          <span id="header-progress" class="font-bold">Question 1 of 50</span>
+        </div>
+        <div class="w-32 bg-blue-950 rounded-full h-3 p-0.5 border border-blue-700">
+          <div id="progress-bar" class="bg-emerald-400 h-2 rounded-full transition-all duration-300" style="width: 2%"></div>
+        </div>
+        <div class="bg-blue-800 px-3 py-1.5 rounded-lg border border-blue-700">
+          <span class="text-xs text-blue-200">Score: </span>
+          <span id="header-score" class="font-bold text-white">0 / 0 (0%)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-5xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+
+    <!-- Intro View -->
+    <div id="intro-card" class="bg-white rounded-2xl shadow-xl p-6 sm:p-10 border border-slate-200">
+      <div class="flex items-center space-x-4 border-b border-slate-100 pb-6 mb-6">
+        <div class="h-16 w-16 rounded-2xl bg-blue-100 text-blue-800 flex items-center justify-center text-3xl font-black">
+          29
+        </div>
+        <div>
+          <h2 class="text-2xl font-black text-slate-900">Chapter 29 Examination & Clinical Case Study</h2>
+          <p class="text-slate-500 text-sm mt-1">Rigorous NCLEX Clinical Judgment Assessment based exclusively on text materials.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <div class="text-blue-600 font-bold text-lg mb-1"><i class="fa-solid fa-list-check mr-2"></i>50 Questions</div>
+          <p class="text-xs text-slate-600">Multiple-choice & Select All That Apply (SATA) testing key concepts, drugs, compensatory systems, and interventions.</p>
+        </div>
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <div class="text-red-600 font-bold text-lg mb-1"><i class="fa-solid fa-notes-medical mr-2"></i>SBAR Case Study</div>
+          <p class="text-xs text-slate-600">Integrated unfolding acute pulmonary edema scenario with realistic Situation, Background, Assessment, and Recommendation analysis.</p>
+        </div>
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <div class="text-emerald-600 font-bold text-lg mb-1"><i class="fa-solid fa-arrows-rotate mr-2"></i>Targeted Remediation</div>
+          <p class="text-xs text-slate-600">Detailed option-by-option rationales with options to retake the full test or practice only incorrect items.</p>
+        </div>
+      </div>
+
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg mb-8 text-sm text-amber-900">
+        <p class="font-bold flex items-center"><i class="fa-solid fa-triangle-exclamation mr-2"></i>Important Exam Guidelines:</p>
+        <ul class="list-disc ml-5 mt-2 space-y-1 text-xs sm:text-sm text-amber-800">
+          <li>For multiple-choice items, select exactly one answer.</li>
+          <li>For Select All That Apply (SATA) items, choose every finding, action, or teaching statement that is clinically correct according to Chapter 29.</li>
+          <li>Explanations and question rationales are provided immediately after submitting each question.</li>
+        </ul>
+      </div>
+
+      <button id="start-exam-btn" class="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg hover:shadow-blue-500/25 transition-all text-base flex items-center justify-center space-x-3">
+        <span>Begin NCLEX Examination</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+
+    <!-- Active Question View -->
+    <div id="quiz-card" class="hidden bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+      <!-- Question Subheader -->
+      <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex flex-wrap justify-between items-center gap-3">
+        <div class="flex items-center space-x-3">
+          <span id="question-badge" class="bg-blue-100 text-blue-800 font-bold text-xs uppercase px-2.5 py-1 rounded-md tracking-wider">Question 1</span>
+          <span id="question-type-badge" class="bg-slate-200 text-slate-700 font-semibold text-xs px-2.5 py-1 rounded-md">Multiple Choice</span>
+        </div>
+        <div id="question-category" class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Pharmacology</div>
+      </div>
+
+      <div class="p-6 sm:p-8">
+        <!-- Optional Clinical Case Study / SBAR Component -->
+        <div id="sbar-container" class="hidden mb-6 bg-slate-50 border border-blue-200 rounded-xl p-5 text-sm">
+          <div class="flex items-center space-x-2 text-blue-900 font-bold text-base mb-3 border-b border-blue-100 pb-2">
+            <i class="fa-solid fa-clipboard-user text-blue-600"></i>
+            <span>Unfolding Clinical Case Study: SBAR Report</span>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm" id="sbar-content">
+            <!-- Dynamically populated if question is a case study -->
+          </div>
+        </div>
+
+        <!-- Question Prompt -->
+        <h3 id="question-text" class="text-lg sm:text-xl font-bold text-slate-900 leading-snug mb-6">
+          <!-- Question text injected here -->
+        </h3>
+
+        <!-- Options Container -->
+        <div id="options-container" class="space-y-3 mb-6">
+          <!-- Options injected here -->
+        </div>
+
+        <!-- Feedback & Rationale Area -->
+        <div id="feedback-panel" class="hidden rounded-xl p-5 mb-6 text-sm transition-all duration-300">
+          <div id="feedback-title" class="font-bold text-base mb-2 flex items-center"></div>
+          <div id="feedback-body" class="space-y-3 text-slate-700"></div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-100">
+          <button id="hint-toggle-btn" class="text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center space-x-1.5 focus:outline-none">
+            <i class="fa-regular fa-lightbulb"></i>
+            <span>Clinical Hint</span>
+          </button>
+          
+          <div class="flex items-center space-x-3 ml-auto">
+            <button id="submit-answer-btn" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-lg shadow transition">
+              Submit Answer
+            </button>
+            <button id="next-question-btn" class="hidden px-6 py-2.5 bg-slate-800 hover:bg-slate-900 text-white font-bold text-sm rounded-lg shadow transition flex items-center space-x-2">
+              <span>Next Question</span>
+              <i class="fa-solid fa-chevron-right text-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Hint Box -->
+        <div id="hint-box" class="hidden mt-4 p-3 bg-amber-50 text-amber-900 rounded-lg text-xs border border-amber-200">
+          <i class="fa-solid fa-circle-info mr-1 text-amber-600"></i>
+          <span id="hint-text"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Results View -->
+    <div id="results-card" class="hidden bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-10">
+      <div class="text-center max-w-xl mx-auto mb-8">
+        <div id="result-icon-wrapper" class="w-20 h-20 rounded-full mx-auto flex items-center justify-center text-4xl mb-4 bg-emerald-100 text-emerald-600">
+          <i id="result-icon" class="fa-solid fa-award"></i>
+        </div>
+        <h2 id="result-headline" class="text-3xl font-black text-slate-900 mb-2">Exam Completed!</h2>
+        <p id="result-subtext" class="text-slate-600 text-sm">Here is your comprehensive NCLEX-style performance report on Cardiac Concepts.</p>
+      </div>
+
+      <!-- Score Card -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto mb-8 text-center">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total Questions</div>
+          <div id="res-total" class="text-2xl font-black text-slate-800 mt-1">50</div>
+        </div>
+        <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-200">
+          <div class="text-xs font-semibold text-emerald-700 uppercase tracking-wider">Correct</div>
+          <div id="res-correct" class="text-2xl font-black text-emerald-700 mt-1">0</div>
+        </div>
+        <div class="bg-red-50 p-4 rounded-xl border border-red-200">
+          <div class="text-xs font-semibold text-red-700 uppercase tracking-wider">Missed</div>
+          <div id="res-missed" class="text-2xl font-black text-red-700 mt-1">0</div>
+        </div>
+      </div>
+
+      <!-- Score Gauge & Passing Status -->
+      <div class="max-w-md mx-auto text-center mb-8 p-6 rounded-2xl bg-blue-50 border border-blue-100">
+        <div class="text-xs uppercase font-bold tracking-wider text-blue-700 mb-1">Percentage Score</div>
+        <div id="res-percentage" class="text-5xl font-black text-blue-900 mb-2">0%</div>
+        <p id="res-status-msg" class="text-xs font-semibold text-blue-800">Minimum 75% Recommended for Mastery</p>
+      </div>
+
+      <!-- Remediation Actions -->
+      <div class="flex flex-wrap justify-center gap-4 border-t border-slate-200 pt-6">
+        <button id="retake-all-btn" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow transition text-sm flex items-center space-x-2">
+          <i class="fa-solid fa-rotate-left"></i>
+          <span>Retake Full 50 Questions</span>
+        </button>
+        <button id="retake-missed-btn" class="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-xl shadow transition text-sm flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed">
+          <i class="fa-solid fa-filter-circle-xmark"></i>
+          <span>Retake Missed Questions Only (<span id="missed-count-btn">0</span>)</span>
+        </button>
+      </div>
+
+      <!-- Missed Questions Review Panel -->
+      <div id="missed-review-section" class="mt-10 pt-8 border-t border-slate-200">
+        <h4 class="text-lg font-bold text-slate-900 mb-4 flex items-center">
+          <i class="fa-solid fa-clipboard-question text-blue-600 mr-2"></i>
+          <span>Item Review & Rationales</span>
+        </h4>
+        <div id="missed-list" class="space-y-4 max-h-96 overflow-y-auto pr-2 custom-scrollbar">
+          <!-- Dynamically populated with reviewed items -->
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 py-4 mt-auto text-center text-xs text-slate-500">
+    Designed for Nursing Clinical Judgment Preparation • Strictly Aligned to Chapter 29 Elsevier Guidelines
+  </footer>
+
+  <script>
+    // Full 50 Questions derived directly and exclusively from Chapter 29
+    const rawQuestions = [
+      {
+        id: 1,
+        type: "mcq",
+        category: "Pathophysiology",
+        question: "A nurse is evaluating a client with left-sided heart failure. Which clinical finding reflects forward failure and diminished tissue perfusion rather than pulmonary congestion?",
+        options: [
+          { text: "Nocturnal dry cough", isCorrect: false, rationale: "Cough is caused by pulmonary venous congestion and fluid-filled alveoli, which is a backward failure symptom." },
+          { text: "Fatigue and weakness during activities", isCorrect: true, rationale: "Forward failure results from decreased cardiac output, impairing systemic tissue perfusion and cellular oxygenation, leading directly to profound fatigue and weakness." },
+          { text: "Bilateral basilar crackles", isCorrect: false, rationale: "Crackles are due to fluid accumulation in the alveoli caused by elevated pulmonary hydrostatic pressures (pulmonary congestion)." },
+          { text: "Orthopnea requiring three pillows", isCorrect: false, rationale: "Orthopnea is caused by increased pulmonary venous congestion in the recumbent position, not forward tissue hypoperfusion." }
+        ],
+        hint: "Differentiate signs of impaired forward cardiac output to organs from backward fluid accumulation in the lungs."
+      },
+      {
+        id: 2,
+        type: "mcq",
+        category: "Pathophysiology",
+        question: "How does the pathophysiology of diastolic heart failure (heart failure with preserved ejection fraction [HFpEF]) differ from systolic heart failure?",
+        options: [
+          { text: "Ejection fraction is severely reduced below 40%.", isCorrect: false, rationale: "An ejection fraction below 40% characterizes systolic heart failure (HFrEF)." },
+          { text: "The ventricle cannot relax adequately during diastole, impairing filling despite an ejection fraction over 40%.", isCorrect: true, rationale: "Diastolic heart failure is characterized by inadequate relaxation or 'stiffening' of the ventricle, preventing sufficient filling during diastole while maintaining an ejection fraction greater than 40%." },
+          { text: "The ventricular chamber dilates excessively and loses contractile power during systole.", isCorrect: false, rationale: "Ventricular dilation and loss of contractile power define systolic failure." },
+          { text: "The heart maintains high-output states due to hyperkinetic conditions.", isCorrect: false, rationale: "High-output failure is caused by hyperkinetic states such as sepsis, hyperthyroidism, or severe anemia, not diastolic failure." }
+        ],
+        hint: "Consider whether the primary mechanical defect is systolic contraction or diastolic filling and compliance."
+      },
+      {
+        id: 3,
+        type: "sata",
+        category: "Clinical Assessment",
+        question: "A nurse is performing a physical assessment on a client admitted with right-sided heart failure. Which assessment findings should the nurse anticipate? Select all that apply.",
+        options: [
+          { text: "Jugular vein distention (JVD)", isCorrect: true, rationale: "Right ventricular failure leads to venous congestion and elevated systemic venous pressure, directly causing distended jugular veins." },
+          { text: "Dependent edema of the lower legs and sacrum", isCorrect: true, rationale: "Elevated hydrostatic venous pressure causes fluid extravasation into dependent tissues (legs in ambulatory patients, sacrum in bedbound patients)." },
+          { text: "Hepatomegaly and ascites", isCorrect: true, rationale: "Systemic venous congestion engorges the liver and allows fluid accumulation within the peritoneal cavity." },
+          { text: "Frothy, pink-tinged sputum", isCorrect: false, rationale: "Pink-tinged, frothy sputum indicates severe pulmonary edema resulting from left ventricular failure." },
+          { text: "Anorexia and nausea", isCorrect: true, rationale: "Venous engorgement and liver congestion place pressure on the stomach and gastrointestinal tract, causing anorexia, fullness, and nausea." }
+        ],
+        hint: "Select findings that stem directly from systemic venous congestion rather than pulmonary capillary overload."
+      },
+      {
+        id: 4,
+        type: "mcq",
+        category: "Nursing Safety Priorities",
+        question: "When assessing fluid status in a client diagnosed with heart failure, which assessment is identified as the most reliable indicator of fluid gain and loss?",
+        options: [
+          { text: "Measurement of ankle pitting edema depth", isCorrect: false, rationale: "Chapter 29 explicitly warns in a Nursing Safety Priority Action Alert that edema is an extremely unreliable sign of heart failure." },
+          { text: "Daily weights taken at the same time every morning with the same scale", isCorrect: true, rationale: "According to the Chapter 29 Action Alert, daily weight taken at the same time in the morning using the same scale is the single most reliable indicator of fluid gain and loss (1 kg = 1 L retained fluid)." },
+          { text: "Strict monitoring of hourly urine output", isCorrect: false, rationale: "Urine output fluctuates with renal perfusion, diuretic administration, and hydration status and is not as consistent a metric of total fluid status as daily weight." },
+          { text: "Auscultation of lung bases for resolving crackles", isCorrect: false, rationale: "Crackles indicate pulmonary fluid presence but do not quantify total body volume shifts." }
+        ],
+        hint: "Recall the Chapter 29 Action Alert regarding the unreliability of peripheral edema."
+      },
+      {
+        id: 5,
+        type: "mcq",
+        category: "Compensatory Mechanisms",
+        question: "What is the initial immediate compensatory mechanism activated in response to tissue hypoxia and low cardiac output in heart failure?",
+        options: [
+          { text: "Sympathetic nervous system stimulation releasing catecholamines", isCorrect: true, rationale: "Sympathetic nervous system stimulation is the most immediate compensatory mechanism, increasing heart rate and blood pressure through adrenergic stimulation." },
+          { text: "Renin-angiotensin-aldosterone system (RAAS) activation", isCorrect: false, rationale: "The RAAS is activated by decreased renal blood flow, but its onset is slower than immediate sympathetic catecholamine surge." },
+          { text: "Myocardial hypertrophy with chamber dilation", isCorrect: false, rationale: "Myocardial hypertrophy is a long-term structural remodeling adaptation that takes weeks to months." },
+          { text: "B-type natriuretic peptide (BNP) synthesis", isCorrect: false, rationale: "BNP is synthesized in response to ventricular stretch and fluid overload, but it is not the most immediate catecholaminergic response." }
+        ],
+        hint: "Think about the fastest neurological and adrenergic response to systemic hypoxia."
+      },
+      {
+        id: 6,
+        type: "mcq",
+        category: "Compensatory Mechanisms",
+        question: "Although sympathetic nervous system activation initially raises cardiac output, why does a persistent increase in heart rate eventually worsen heart failure?",
+        options: [
+          { text: "It shortens diastolic filling time and dramatically increases myocardial oxygen consumption.", isCorrect: true, rationale: "Excessive tachycardia shortens diastolic time, limiting ventricular filling and reducing stroke volume, while simultaneously escalating myocardial oxygen demand." },
+          { text: "It causes direct suppression of renal renin release.", isCorrect: false, rationale: "Sympathetic stimulation promotes renin release rather than suppressing it." },
+          { text: "It triggers excessive renal excretion of potassium and sodium.", isCorrect: false, rationale: "Sympathetic discharge impairs renal blood flow, triggering sodium and water retention via RAAS." },
+          { text: "It causes profound systemic venous pooling and drops preload to zero.", isCorrect: false, rationale: "Sympathetic activation causes vasoconstriction and increases venous return initially." }
+        ],
+        hint: "Consider what happens to the filling time of the ventricles when the heart beats too fast."
+      },
+      {
+        id: 7,
+        type: "mcq",
+        category: "Diagnostic Testing",
+        question: "A client presents to the emergency department with acute dyspnea. The health care provider notes that the client's B-type natriuretic peptide (BNP) level is within normal limits. How does the nurse interpret this finding?",
+        options: [
+          { text: "The client is in severe decompensated left ventricular failure.", isCorrect: false, rationale: "Left ventricular failure causing stretch triggers significant elevations in BNP." },
+          { text: "The acute dyspnea is related to a primary pulmonary dysfunction rather than heart failure.", isCorrect: true, rationale: "BNP is released when ventricles stretch from fluid overload. A normal BNP in a patient with acute dyspnea rules out heart failure and indicates primary lung dysfunction (e.g., COPD or pneumonia)." },
+          { text: "The client has progressed to end-stage Stage D heart failure.", isCorrect: false, rationale: "Stage D heart failure is marked by persistently high BNP and refractory symptoms." },
+          { text: "The client requires an immediate intravenous loop diuretic bolus.", isCorrect: false, rationale: "Diuretics are indicated for fluid overload and elevated filling pressures, which are not demonstrated here." }
+        ],
+        hint: "What does the absence of ventricular wall stretch indicate about the etiology of dyspnea?"
+      },
+      {
+        id: 8,
+        type: "mcq",
+        category: "Diagnostic Testing",
+        question: "Which laboratory finding serves as an 'early warning detector' of decreased cardiac compliance before BNP levels become elevated and before clinical symptoms appear?",
+        options: [
+          { text: "Elevated serum cardiac troponin T", isCorrect: false, rationale: "Troponins indicate active myocardial injury or necrosis, not early subtle compliance loss." },
+          { text: "Microalbuminuria on urinalysis", isCorrect: true, rationale: "Urinalysis revealing microalbuminuria is an early indicator of decreased cardiac compliance that occurs before BNP rises, alerting clinicians long before symptoms emerge." },
+          { text: "Severe hypokalemia (<3.0 mEq/L)", isCorrect: false, rationale: "Hypokalemia is an electrolyte disturbance often caused by diuretics, not an early structural compliance marker." },
+          { text: "Elevated blood urea nitrogen (BUN) above 30 mg/dL", isCorrect: false, rationale: "BUN rises with reduced renal perfusion or dehydration, not as a specific early pre-symptomatic marker of cardiac compliance." }
+        ],
+        hint: "Check the urinalysis section of the diagnostic cues in Chapter 29."
+      },
+      {
+        id: 9,
+        type: "mcq",
+        category: "Diagnostic Testing",
+        question: "Which diagnostic imaging examination is considered the best and most definitive tool for diagnosing heart failure, identifying valvular changes, and determining ejection fraction?",
+        options: [
+          { text: "Standard 12-lead electrocardiogram (ECG)", isCorrect: false, rationale: "An ECG shows rhythm, hypertrophy, or ischemia but is not helpful in determining the presence or extent of heart failure." },
+          { text: "Transthoracic echocardiography", isCorrect: true, rationale: "Echocardiography is noninvasive and considered the best tool for diagnosing heart failure, valvular defects, chamber enlargement, hypertrophy, and ejection fraction." },
+          { text: "Posteroanterior chest x-ray", isCorrect: false, rationale: "Chest x-rays show cardiomegaly and effusions but cannot measure ejection fraction or fine valvular dynamics." },
+          { text: "Pulmonary artery catheterization", isCorrect: false, rationale: "Invasive hemodynamic monitoring is reserved for acutely ill critical care patients, not the primary noninvasive standard diagnostic tool." }
+        ],
+        hint: "Think of the primary noninvasive ultrasound imaging used to calculate left ventricular ejection fraction."
+      },
+      {
+        id: 10,
+        type: "mcq",
+        category: "Physical Assessment",
+        question: "During cardiac auscultation of a client admitted with worsening heart failure, the nurse detects an S3 gallop. What physiological phenomenon does this sound represent?",
+        options: [
+          { text: "Closure of the semilunar valves during systole", isCorrect: false, rationale: "Closure of semilunar valves produces the second heart sound (S2)." },
+          { text: "An early diastolic filling sound indicating an increase in left ventricular pressure", isCorrect: true, rationale: "An S3 gallop is an early diastolic filling sound caused by blood entering a stiff, noncompliant ventricle under elevated pressures; it is often the first clinical sign of heart failure." },
+          { text: "Turbulent flow through a calcified, stenotic aortic valve", isCorrect: false, rationale: "Stenosis produces a systolic ejection murmur, not an S3 sound." },
+          { text: "Decreased ventricular compliance at the end of diastole (atrial kick)", isCorrect: false, rationale: "Decreased ventricular compliance during atrial contraction produces an S4 sound, which is not a sign of heart failure itself." }
+        ],
+        hint: "Recall the key early diastolic filling sound that is often the first indicator of heart failure."
+      },
+      {
+        id: 11,
+        type: "mcq",
+        category: "Pharmacology",
+        question: "A client with heart failure is initiated on the angiotensin-converting enzyme inhibitor (ACEI) enalapril. Which adverse effect is recognized as a potentially lethal emergency requiring immediate intervention?",
+        options: [
+          { text: "Nagging dry nocturnal cough", isCorrect: false, rationale: "Dry cough is a bothersome side effect leading to drug discontinuation, but it is not lethal." },
+          { text: "Angioedema involving the face, lips, and pharynx", isCorrect: true, rationale: "Angioedema is a rare but potentially lethal complication of ACEIs that causes rapid airway compromise." },
+          { text: "Mild orthostatic dizziness upon standing", isCorrect: false, rationale: "Orthostatic dizziness requires slow position changes but is not immediately lethal." },
+          { text: "Mild hyperkalemia of 5.1 mEq/L", isCorrect: false, rationale: "Mild hyperkalemia requires dietary adjustment and monitoring, but is not immediately catastrophic compared to acute angioedema." }
+        ],
+        hint: "Focus on the life-threatening airway complication associated with ACE inhibitors."
+      },
+      {
+        id: 12,
+        type: "mcq",
+        category: "Nursing Safety Priorities",
+        question: "A nurse is administering the first dose of captopril, an ACE inhibitor, to an 78-year-old client with a baseline systolic BP of 98 mm Hg and serum sodium of 132 mEq/L. Which action is required according to the Chapter 29 Drug Alert?",
+        options: [
+          { text: "Administer the dose with a high-potassium snack and recheck BP at 24 hours.", isCorrect: false, rationale: "High potassium should not be combined with ACEIs, and BP must be monitored much sooner than 24 hours." },
+          { text: "Monitor blood pressure every hour for several hours after the initial dose and each dose increase.", isCorrect: true, rationale: "Clients older than 75 years, with baseline SBP <100 mm Hg, or hyponatremic (<135 mEq/L) are at high risk for first-dose hypotension; BP must be checked every hour for several hours." },
+          { text: "Hold the dose indefinitely because ACEIs are strictly contraindicated in clients over 75.", isCorrect: false, rationale: "ACEIs are not contraindicated; they are started slowly and cautiously with close hemodynamic surveillance." },
+          { text: "Place the client on immediate fluid restriction of 500 mL/day to avoid volume expansion.", isCorrect: false, rationale: "Volume depletion actually accentuates ACEI-induced hypotension." }
+        ],
+        hint: "Identify the high-risk parameters for profound first-dose hypotension outlined in the Drug Alert."
+      },
+      {
+        id: 13,
+        type: "mcq",
+        category: "Nursing Safety Priorities",
+        question: "While monitoring a client after starting an ACE inhibitor, the nurse observes that the client's systolic blood pressure has dropped to 84 mm Hg and the client reports lightheadedness. What is the immediate priority nursing action?",
+        options: [
+          { text: "Assist the client to ambulate in the hallway to stimulate circulation.", isCorrect: false, rationale: "Ambulation with symptomatic hypotension can lead to syncope and falls." },
+          { text: "Place the client flat and elevate the legs to enhance cerebral perfusion and venous return.", isCorrect: true, rationale: "Per the Chapter 29 Drug Alert, if SBP drops below 90 mm Hg, immediately place the patient flat with legs elevated to promote venous return and cerebral perfusion, and notify the provider." },
+          { text: "Administer a sublingual nitroglycerin tablet.", isCorrect: false, rationale: "Nitroglycerin causes vasodilation and would dangerously crash the blood pressure further." },
+          { text: "Provide a hot beverage and encourage deep coughing.", isCorrect: false, rationale: "This does not correct acute neurovascular hypoperfusion or arterial vasodilation." }
+        ],
+        hint: "Recall the emergency positioning specified in the Drug Alert for sudden severe hypotension."
+      },
+      {
+        id: 14,
+        type: "mcq",
+        category: "Pharmacology",
+        question: "The provider prescribes sacubitril/valsartan (an ARNI) for a client who was previously taking the ACE inhibitor enalapril. What safety rule must the nurse enforce regarding the transition between these medications?",
+        options: [
+          { text: "The client must take both medications simultaneously for 14 days to avoid rebound hypertension.", isCorrect: false, rationale: "Taking both medications concurrently is strictly contraindicated due to severe angioedema and hypotension risk." },
+          { text: "Sacubitril/valsartan must not be administered within 36 hours of the last dose of an ACE inhibitor.", isCorrect: true, rationale: "Because combining an ARNI with an ACE inhibitor significantly increases the risk of severe, life-threatening angioedema, a strict 36-hour washout period is mandatory." },
+          { text: "The client should receive double doses of loop diuretics during the first 48 hours of starting an ARNI.", isCorrect: false, rationale: "Over-diuresis causes severe volume depletion and profound hypotension." },
+          { text: "Serum sodium must exceed 145 mEq/L prior to starting sacubitril/valsartan.", isCorrect: false, rationale: "Hypernatremia is not an eligibility prerequisite for ARNI initiation." }
+        ],
+        hint: "Remember the mandatory washout duration required to prevent fatal angioedema."
+      },
+      {
+        id: 15,
+        type: "mcq",
+        category: "Pharmacology",
+        question: "A nurse is administering intravenous furosemide to a client with acute decompensated heart failure. Why must furosemide be administered IV push slowly over 1 to 2 minutes?",
+        options: [
+          { text: "To prevent sudden reflex hypertension", isCorrect: false, rationale: "Furosemide lowers blood pressure rather than causing hypertension." },
+          { text: "To avoid causing ototoxicity", isCorrect: true, rationale: "Rapid administration of IV push loop diuretics (furosemide and bumetanide) can cause transient or permanent ototoxicity (tinnitus, hearing loss); it must be given over 1 to 2 minutes." },
+          { text: "To prevent fatal hyperkalemia", isCorrect: false, rationale: "Furosemide causes hypokalemia due to potassium excretion, not hyperkalemia." },
+          { text: "To avoid acute bronchospasm", isCorrect: false, rationale: "Furosemide does not cause bronchospasm." }
+        ],
+        hint: "Think about the cranial nerve VIII sensory side effect associated with rapid high-dose loop diuretics."
+      },
+      {
+        id: 16,
+        type: "mcq",
+        category: "Pharmacology",
+        question: "An 80-year-old client with mild volume overload is prescribed hydrochlorothiazide (HCTZ). Why is a thiazide diuretic often preferred over a loop diuretic for initial mild failure in older adults?",
+        options: [
+          { text: "Thiazide diuretics work even when glomerular filtration rate drops below 10 mL/min.", isCorrect: false, rationale: "Thiazides lose efficacy in severe renal insufficiency; loop diuretics are preferred in advanced renal failure." },
+          { text: "The action of thiazides is self-limiting and has a gradual onset, reducing the risk of severe dehydration.", isCorrect: true, rationale: "Thiazide action is self-limiting (diuresis tapers after edema fluid is mobilized), producing gradual onset and minimizing the acute dehydration and fall risk common with loop diuretics." },
+          { text: "Thiazides spare potassium and eliminate the need for serum electrolyte monitoring.", isCorrect: false, rationale: "Thiazides cause renal potassium wasting and hypokalemia." },
+          { text: "Thiazides provide direct positive inotropic stimulation to the myocardium.", isCorrect: false, rationale: "Thiazides are strictly diuretics with no direct positive inotropic action." }
+        ],
+        hint: "Focus on the self-limiting nature and lower dehydration potential of thiazides in older adults."
+      },
+      {
+        id: 17,
+        type: "mcq",
+        category: "Pharmacology",
+        question: "A client with heart failure is receiving oral potassium supplements along with furosemide. Before administering the scheduled morning potassium chloride, the nurse reviews the lab results and notes a serum creatinine of 2.1 mg/dL. What is the nurse's priority action?",
+        options: [
+          { text: "Administer the potassium supplement with breakfast as scheduled.", isCorrect: false, rationale: "Administering potassium in the presence of unaddressed acute renal impairment risks lethal hyperkalemia." },
+          { text: "Notify the health care provider before administering supplemental potassium.", isCorrect: true, rationale: "Chapter 29 directs that if serum creatinine is greater than 1.8 mg/dL, the nurse must notify the provider before administering potassium supplements because impaired renal function can lead to lethal potassium retention." },
+          { text: "Crush the potassium tablet and dissolve it in orange juice.", isCorrect: false, rationale: "This does not address the physiological safety concern of impaired renal clearance." },
+          { text: "Encourage the client to drink 2 L of water immediately.", isCorrect: false, rationale: "Rapid water intake can precipitate fluid overload in heart failure." }
+        ],
+        hint: "Recall the specific serum creatinine cutoff value in Chapter 29 that requires provider notification prior to potassium administration."
+      },
+      {
+        id: 18,
+        type: "mcq",
+        category: "Pharmacology",
+        question: "A client with chronic heart failure has been taking digoxin 0.125 mg daily. Which assessment finding should alert the nurse to potential early digoxin toxicity?",
+        options: [
+          { text: "Resting sinus tachycardia of 118 beats/min", isCorrect: false, rationale: "Digoxin toxicity slows AV conduction, characteristically producing bradycardia or ectopic dysrhythmias, not sinus tachycardia." },
+          { text: "Anorexia, fatigue, blurred vision, and altered mental status", isCorrect: true, rationale: "Early signs of digoxin toxicity are vague and nonspecific, including gastrointestinal symptoms (anorexia), fatigue, visual disturbances (blurred or yellow vision), and confusion in older adults." },
+          { text: "Sudden onset of pink-tinged frothy sputum", isCorrect: false, rationale: "Pink frothy sputum indicates pulmonary edema, not drug toxicity." },
+          { text: "Severe generalized pitting peripheral edema", isCorrect: false, rationale: "Edema indicates worsening right-sided heart failure, not specific digitalis toxicity." }
+        ],
+        hint: "Identify the classic nonspecific GI, neuro, and ocular symptoms of digitalis toxicity."
+      },
+      {
+        id: 19,
+        type: "mcq",
+        category: "Pharmacology",
+        question: "Which electrolyte imbalance is the primary trigger that potentiates digoxin toxicity and causes increased cardiac automaticity with premature ventricular contractions (PVCs)?",
+        options: [
+          { text: "Hypercalcemia", isCorrect: false, rationale: "While hypercalcemia can interact, hypokalemia is the primary common trigger emphasized in Chapter 29." },
+          { text: "Hypokalemia", isCorrect: true, rationale: "Hypokalemia dramatically increases myocardial sensitivity to digoxin, enhancing automaticity and predisposing to ectopic beats such as PVCs and dangerous dysrhythmias." },
+          { text: "Hypermagnesemia", isCorrect: false, rationale: "Hypermagnesemia depresses neuromuscular function, rather than sensitizing myocardium to digitalis toxicity." },
+          { text: "Hyponatremia", isCorrect: false, rationale: "Hyponatremia is common in fluid overload but does not directly potentiate digoxin toxicity like low potassium." }
+        ],
+        hint: "Identify the electrolyte depleted by loop diuretics that makes the heart hypersensitive to digoxin."
+      },
+      {
+        id: 20,
+        type: "sata",
+        category: "Patient Education",
+        question: "The nurse is providing discharge education to a client prescribed metoprolol succinate and digoxin for heart failure. Which instructions must the nurse include? Select all that apply.",
+        options: [
+          { text: "Establish the same time of day to take your medications every day.", isCorrect: true, rationale: "Consistency maintains therapeutic serum levels and prevents fluctuations." },
+          { text: "Take your digoxin simultaneously with your aluminum hydroxide antacid to prevent stomach upset.", isCorrect: false, rationale: "Antacids significantly interfere with digoxin gastrointestinal absorption; they must not be taken together." },
+          { text: "Check your pulse rate before taking digoxin and report a rate outside your target or sudden irregularity.", isCorrect: true, rationale: "Patients must check their pulse and report bradycardia, tachycardia, or changes in rhythm." },
+          { text: "If you miss a dose and realize it the next day, double your dose that morning.", isCorrect: false, rationale: "Patients should never double doses; if remembered the next day, only the usual daily dose should be taken." },
+          { text: "Report symptoms such as loss of appetite, muscle weakness, or confusion immediately.", isCorrect: true, rationale: "These are hallmark manifestations of digitalis toxicity that necessitate immediate provider evaluation." }
+        ],
+        hint: "Review Box 29.8 for patient rules regarding pulse monitoring, missed doses, and antacids."
+      },
+      {
+        id: 21,
+        type: "mcq",
+        category: "Pharmacology",
+        question: "When initiating beta-blocker therapy (e.g., carvedilol or sustained-release metoprolol succinate) for heart failure, what critical administration principle must the nurse maintain?",
+        options: [
+          { text: "Begin with a high loading dose to rapidly blunt catecholamine receptors.", isCorrect: false, rationale: "High initial doses can precipitate acute cardiac collapse; therapy must begin with an extremely low dose." },
+          { text: "Start with an extremely low dose, increase gradually, and evaluate weekly for bradycardia and hypotension.", isCorrect: true, rationale: "Beta blockers must be started slowly at very low doses and titrated gradually. Patients are monitored closely for bradycardia, hypotension, and decompensation." },
+          { text: "Discontinue the beta blocker immediately if the client experiences mild fatigue on day 2.", isCorrect: false, rationale: "Beta blockers should never be stopped abruptly as this triggers clinical decompensation; mild initial fatigue is expected." },
+          { text: "Ensure the resting heart rate is maintained above 85 beats/min at all times.", isCorrect: false, rationale: "The target resting heart rate for beta-blocker therapy in HF is between 55 and 60 beats/min." }
+        ],
+        hint: "Think about the pace of dosing and the targeted resting heart rate parameters (55-60 bpm)."
+      },
+      {
+        id: 22,
+        type: "mcq",
+        category: "Pharmacology",
+        question: "A client with chronic heart failure who has an ejection fraction of 28% remains symptomatic with a resting heart rate of 78 beats/min while in sinus rhythm despite taking the maximally tolerated dose of carvedilol. Which medication is specifically indicated to lower heart rate and reduce hospitalizations?",
+        options: [
+          { text: "Dobutamine infusion", isCorrect: false, rationale: "Dobutamine is a short-term IV inotrope used in acute decompensation that increases heart rate." },
+          { text: "Ivabradine", isCorrect: true, rationale: "Ivabradine is an HCN channel blocker indicated for clients in sinus rhythm with resting HR ≥70 bpm and EF <35% on maximally tolerated beta blockers to reduce hospitalizations." },
+          { text: "Atropine sulfate", isCorrect: false, rationale: "Atropine is an anticholinergic used to treat symptomatic bradycardia." },
+          { text: "Amlodipine", isCorrect: false, rationale: "Amlodipine is a dihydropyridine calcium channel blocker that does not lower sinus node firing or reduce HF hospitalizations." }
+        ],
+        hint: "Name the first-in-class HCN channel blocker that specifically inhibits SA node pacing without suppressing contractility."
+      },
+      {
+        id: 23,
+        type: "mcq",
+        category: "Pharmacology",
+        question: "A nurse is teaching a client who has been newly prescribed ivabradine. Which instruction should be highlighted regarding drug administration and safety?",
+        options: [
+          { text: "Take this medication strictly on an empty stomach 2 hours before meals.", isCorrect: false, rationale: "Ivabradine should be taken with meals." },
+          { text: "Take this medication with meals and learn how to check your radial pulse for bradycardia or irregular rhythm.", isCorrect: true, rationale: "Ivabradine must be taken with meals; clients must check their radial pulse and report bradycardia or new irregularities (atrial fibrillation risk)." },
+          { text: "Stop taking all beta blockers 48 hours prior to the first dose.", isCorrect: false, rationale: "Ivabradine is typically added to maximally tolerated beta-blocker therapy, not substituted as an abrupt replacement." },
+          { text: "Expect dark brown discoloration of your urine as a harmless side effect.", isCorrect: false, rationale: "Urine discoloration is not associated with ivabradine." }
+        ],
+        hint: "Recall meal timing and the pulse check requirement for HCN channel blockers."
+      },
+      {
+        id: 24,
+        type: "sata",
+        category: "Pharmacology",
+        question: "A client with heart failure is started on empagliflozin, a sodium-glucose cotransporter-2 inhibitor (SGLT2i). Which nursing assessments are essential for this drug class? Select all that apply.",
+        options: [
+          { text: "Signs of hypovolemia, dizziness, and hypotension", isCorrect: true, rationale: "SGLT2 inhibitors promote osmotic diuresis via glucosuria, predisposing to hypovolemia, hypotension, and syncope." },
+          { text: "Genitourinary fungal infections", isCorrect: true, rationale: "Increased urinary glucose excretion creates a breeding ground for fungal and yeast infections in the genital area." },
+          { text: "Serum glucose monitoring even if the client does not have type 2 diabetes", isCorrect: true, rationale: "The drug affects glucose cotransport and is recommended in HF regardless of diabetes status; monitoring ensures metabolic safety." },
+          { text: "Signs of excessive fluid retention and hypervolemia", isCorrect: false, rationale: "SGLT2 inhibitors cause osmotic diuresis and fluid reduction, not fluid retention." },
+          { text: "Sudden development of hearing loss and tinnitus", isCorrect: false, rationale: "Ototoxicity is associated with rapid IV loop diuretics, not SGLT2 inhibitors." }
+        ],
+        hint: "Think about the consequences of glucosuria: osmotic volume depletion and localized fungal growth."
+      },
+      {
+        id: 25,
+        type: "mcq",
+        category: "Pharmacology",
+        question: "Which intravenous inotropic agent acts as a phosphodiesterase inhibitor, increasing cyclic adenosine monophosphate (cAMP) to enhance myocardial calcium entry and cause vasodilation during acute heart failure?",
+        options: [
+          { text: "Dobutamine", isCorrect: false, rationale: "Dobutamine is a direct beta-adrenergic agonist, not a phosphodiesterase inhibitor." },
+          { text: "Milrinone", isCorrect: true, rationale: "Milrinone is a phosphodiesterase inhibitor that increases cellular cAMP, promoting calcium entry into cardiac myocytes to increase contractility while dilating vascular beds." },
+          { text: "Furosemide", isCorrect: false, rationale: "Furosemide is a loop diuretic, not an inotrope." },
+          { text: "Epinephrine", isCorrect: false, rationale: "Epinephrine is a non-selective alpha- and beta-adrenergic catecholamine." }
+        ],
+        hint: "Identify the IV inodilator that works through phosphodiesterase inhibition and cAMP elevation."
+      },
+      {
+        id: 26,
+        type: "sata",
+        category: "Emergency Care",
+        question: "A client with chronic heart failure develops acute pulmonary edema. Which assessment findings represent hallmark features of this life-threatening emergency? Select all that apply.",
+        options: [
+          { text: "Expectoration of frothy, blood-tinged sputum", isCorrect: true, rationale: "Severe hydrostatic pressures force capillary fluid and red blood cells into alveolar spaces, producing pink frothy sputum." },
+          { text: "Bilateral lung crackles that ascend from the bases upward", isCorrect: true, rationale: "Fluid fills the alveoli beginning in dependent bases and climbs upward as transudation accelerates." },
+          { text: "Severe dyspnea at rest, air hunger, and extreme anxiety", isCorrect: true, rationale: "Hypoxia and alveolar flooding trigger profound air hunger, sympathetic discharge, and intense panic." },
+          { text: "Warm, dry, flushed extremities with bounding pulses", isCorrect: false, rationale: "Patients with acute pulmonary edema typically present with cold, clammy, pale, or cyanotic skin due to intense vasoconstriction." },
+          { text: "Acute confusion or disorientation, particularly in older adults", isCorrect: true, rationale: "Cerebral hypoxia caused by impaired gas exchange presents early as acute confusion or disorientation." }
+        ],
+        hint: "Review Box 29.5: Key Features of Pulmonary Edema."
+      },
+      {
+        id: 27,
+        type: "mcq",
+        category: "Emergency Care",
+        question: "A client in the progressive care unit exhibits severe dyspnea, basilar crackles, tachypnea of 34 breaths/min, and oxygen saturation of 82% on room air. The client's blood pressure is 142/88 mm Hg. What is the immediate priority positioning intervention?",
+        options: [
+          { text: "Place the client supine with the legs elevated 45 degrees.", isCorrect: false, rationale: "Elevating legs increases venous return and worsens pulmonary alveolar flooding." },
+          { text: "Position the client in a high-Fowler's position with the legs dangling down.", isCorrect: true, rationale: "If not hypotensive, placing the patient in high-Fowler's with legs dependent reduces venous return (preload) to the heart and facilitates diaphragmatic excursion." },
+          { text: "Place the client in Trendelenburg position.", isCorrect: false, rationale: "Trendelenburg position would flood the central circulation and cause immediate asphyxiation." },
+          { text: "Turn the client onto the left lateral Sims position.", isCorrect: false, rationale: "Lateral positioning does not maximize chest expansion or drop preload like high-Fowler's." }
+        ],
+        hint: "How can gravity be used to reduce venous return to an overloaded left ventricle?"
+      },
+      {
+        id: 28,
+        type: "mcq",
+        category: "Emergency Care",
+        question: "The nurse is initiating emergency oxygen therapy for a client experiencing acute pulmonary edema who is struggling to breathe. Which oxygen delivery method and flow rate are recommended by Chapter 29 guidelines?",
+        options: [
+          { text: "Nasal cannula at 2 L/min", isCorrect: false, rationale: "Low-flow nasal cannula provides inadequate FiO2 for severe pulmonary edema." },
+          { text: "Simple facemask at 5 to 12 L/min or nonrebreather mask at 6 to 10 L/min", isCorrect: true, rationale: "Chapter 29 Critical Rescue specifies administering oxygen at 5-12 L/min by simple mask or 6-10 L/min by nonrebreather with reservoir (delivering up to 100% O2) to maintain SaO2 >90%." },
+          { text: "Venturi mask strictly fixed at 24% FiO2", isCorrect: false, rationale: "24% is insufficient for acute pulmonary edema with severe hypoxia." },
+          { text: "Room air with incentive spirometry coaching every 15 minutes", isCorrect: false, rationale: "Supplemental high-concentration oxygen is urgently needed to preserve life." }
+        ],
+        hint: "Recall the specific flow rates and masks detailed in the Chapter 29 Critical Rescue alert."
+      },
+      {
+        id: 29,
+        type: "mcq",
+        category: "Emergency Care",
+        question: "A client experiencing acute pulmonary edema has an initial blood pressure of 138/84 mm Hg. The provider orders sublingual nitroglycerin (NTG) while IV access is established. How should the nurse administer this drug?",
+        options: [
+          { text: "Give 1 tablet every 15 minutes for up to four doses as long as diastolic BP is over 90.", isCorrect: false, rationale: "Standard sublingual NTG protocol in this emergency is every 5 minutes for three doses." },
+          { text: "Administer 1 tablet every 5 minutes for up to three doses if systolic BP remains above 100 mm Hg.", isCorrect: true, rationale: "If systolic BP >100 mm Hg, give sublingual NTG every 5 minutes for 3 doses to decrease afterload and preload while establishing IV lines." },
+          { text: "Administer only if systolic BP drops below 90 mm Hg.", isCorrect: false, rationale: "Nitroglycerin is contraindicated in hypotension (<90-100 mm Hg)." },
+          { text: "Dissolve 3 tablets together under the tongue as an immediate bolus.", isCorrect: false, rationale: "Tablets must be given individually every 5 minutes with blood pressure monitoring." }
+        ],
+        hint: "What is the standard frequency and systolic BP threshold for sublingual nitroglycerin administration?"
+      },
+      {
+        id: 30,
+        type: "mcq",
+        category: "Emergency Care",
+        question: "Why is intravenous morphine sulfate sometimes prescribed for a hemodynamically stable client experiencing acute pulmonary edema?",
+        options: [
+          { text: "To stimulate the sympathetic nervous system and increase peripheral resistance", isCorrect: false, rationale: "Morphine inhibits sympathetic tone rather than stimulating it." },
+          { text: "To reduce venous return (preload), decrease anxiety, and reduce the work of breathing", isCorrect: true, rationale: "Morphine causes venous vasodilation (reducing preload), relieves severe panic/anxiety, and decreases respiratory work." },
+          { text: "To increase renal renin production and increase blood pressure", isCorrect: false, rationale: "Morphine has no renin-stimulating therapeutic intent." },
+          { text: "To induce systemic vasoconstriction to improve organ perfusion", isCorrect: false, rationale: "Morphine induces vasodilation, not vasoconstriction." }
+        ],
+        hint: "Consider how relieving air-hunger anxiety and dilating venous capacitance vessels helps the failing heart."
+      },
+      {
+        id: 31,
+        type: "mcq",
+        category: "Advanced Therapies",
+        question: "A client with severe refractory fluid overload and diuretic resistance is scheduled for ultrafiltration. Which physiological benefit does ultrafiltration achieve?",
+        options: [
+          { text: "Increases systemic vascular resistance and circulating aldosterone levels", isCorrect: false, rationale: "Ultrafiltration reduces aldosterone and vascular resistance." },
+          { text: "Decreases cardiac filling pressures and reduces circulating norepinephrine, renin, and aldosterone", isCorrect: true, rationale: "Ultrafiltration removes excess fluid, lowering pulmonary arterial and cardiac filling pressures while decreasing neurohormones (norepinephrine, renin, aldosterone)." },
+          { text: "Permanently restores cardiac myocytes to normal histological structure", isCorrect: false, rationale: "Remodeling is not reversed at a cellular histologic level by mechanical fluid removal." },
+          { text: "Eliminates the need for future guideline-directed medical therapy", isCorrect: false, rationale: "Medical therapy remains essential after ultrafiltration." }
+        ],
+        hint: "Look at the bulleted benefits of ultrafiltration listed on Page 24-25."
+      },
+      {
+        id: 32,
+        type: "mcq",
+        category: "Advanced Therapies",
+        question: "A client with NYHA Class III heart failure, an ejection fraction of 28%, and a left bundle branch block (LBBB) is evaluated for device therapy. Which modality is specifically indicated to provide biventricular pacing and synchronize contractions?",
+        options: [
+          { text: "External transcutaneous pacemaker", isCorrect: false, rationale: "Transcutaneous pacing is an emergency temporary stabilization measure for acute bradycardia." },
+          { text: "Cardiac resynchronization therapy (CRT)", isCorrect: true, rationale: "CRT (biventricular pacing) is indicated for clients with Class III/IV HF, EF <35%, and LBBB to create synchronous contractions, improving EF and cardiac output." },
+          { text: "Single-chamber right ventricular demand pacemaker", isCorrect: false, rationale: "Single-chamber ventricular pacing can worsen dyssynchrony in patients with left bundle branch block." },
+          { text: "Investigative gene factor therapy", isCorrect: false, rationale: "Gene therapy does not synchronize ventricular electrical conduction." }
+        ],
+        hint: "Look for the biventricular pacing modality specifically indicated for EF <35% and LBBB."
+      },
+      {
+        id: 33,
+        type: "mcq",
+        category: "Advanced Therapies",
+        question: "A client with heart failure has a CardioMEMS device implanted. How does this implantable wireless system assist in preventing hospital readmissions?",
+        options: [
+          { text: "It shocks the patient automatically during episodes of ventricular tachycardia.", isCorrect: false, rationale: "CardioMEMS has no defibrillation capability; that is the role of an ICD." },
+          { text: "It takes daily pulmonary artery pressure readings at home, detecting fluid retention before symptoms emerge.", isCorrect: true, rationale: "CardioMEMS is a sensor permanently implanted in the pulmonary artery that transmits daily pressures from a special home pillow, allowing medication adjustments before clinical deterioration." },
+          { text: "It mechanically pumps blood from the left ventricle into the ascending aorta.", isCorrect: false, rationale: "Pumping blood mechanically is the function of a ventricular assist device (VAD)." },
+          { text: "It continuously infuses intravenous furosemide into the subclavian vein.", isCorrect: false, rationale: "CardioMEMS is solely a diagnostic pressure monitoring transducer, not an infusion pump." }
+        ],
+        hint: "Think about the permanent quarter-sized sensor in the pulmonary artery transmitted via an antenna pillow."
+      },
+      {
+        id: 34,
+        type: "mcq",
+        category: "Advanced Therapies",
+        question: "A nurse is assessing a client who had a left ventricular assist device (LVAD) placed as destination therapy. Which clinical finding is an expected characteristic of continuous-flow VAD physiology?",
+        options: [
+          { text: "A bounding, prominent radial pulse with wide pulse pressure", isCorrect: false, rationale: "Continuous flow produces a continuous laminar blood stream rather than a traditional pulsatile waveform." },
+          { text: "A constant mechanical hum heard upon auscultation of the chest", isCorrect: true, rationale: "Continuous-flow mechanical VAD pumps run constantly, creating an expected continuous mechanical humming sound upon chest auscultation." },
+          { text: "Complete absence of heart sounds and quiet breath sounds", isCorrect: false, rationale: "Underlying heart and breath sounds remain audible alongside the device hum." },
+          { text: "Persistent bilateral lower extremity hyperreflexia", isCorrect: false, rationale: "Hyperreflexia is not an expected finding of VAD implantation." }
+        ],
+        hint: "Recall the unique auscultatory sound produced by a continuous-flow mechanical rotor."
+      },
+      {
+        id: 35,
+        type: "sata",
+        category: "Advanced Therapies",
+        question: "A nurse is preparing an educational session for the family of a client receiving a ventricular assist device (VAD) as bridge-to-transplant. Which potential postoperative complications must be monitored? Select all that apply.",
+        options: [
+          { text: "Bleeding", isCorrect: true, rationale: "Extensive surgical cannulation and anticoagulation put clients at high risk for hemorrhage." },
+          { text: "Infective endocarditis", isCorrect: true, rationale: "Indwelling prosthetic mechanical components and drivelines serve as potential conduits for microbial infection." },
+          { text: "Ventricular dysrhythmias", isCorrect: true, rationale: "Mechanical cannula contact with myocardial walls and myocardial irritability can trigger ventricular dysrhythmias." },
+          { text: "Cerebrovascular accident (stroke)", isCorrect: true, rationale: "Blood passing over non-endothelial pump surfaces increases thrombus formation and thromboembolic stroke risk." },
+          { text: "Hypertrophic subaortic stenosis", isCorrect: false, rationale: "This is a congenital/genetic cardiomyopathy, not a complication of VAD implantation." }
+        ],
+        hint: "Review the postoperative complications list for VADs on Page 22."
+      },
+      {
+        id: 36,
+        type: "mcq",
+        category: "Health Equity",
+        question: "According to the Chapter 29 discussion on health equity and heart failure, which population experiences the highest mortality rate from heart failure and the greatest gap in receiving heart transplantation?",
+        options: [
+          { text: "Asian American older adults", isCorrect: false, rationale: "While health equity impacts many, the text specifies Black adults." },
+          { text: "Black adults", isCorrect: true, rationale: "Chapter 29 emphasizes that Black adults bear a disproportionately high burden of HF and have the greatest disparity gap between high mortality rates and declining heart transplant rates." },
+          { text: "Caucasian young adults", isCorrect: false, rationale: "Caucasian patients have historically maintained higher relative transplantation rates." },
+          { text: "Native Hawaiian adolescents", isCorrect: false, rationale: "This group is not specifically identified in the Chapter 29 health equity exemplar." }
+        ],
+        hint: "Refer to the Patient-Centered Care: Health Equity box regarding transplant allocation disparities."
+      },
+      {
+        id: 37,
+        type: "mcq",
+        category: "Discharge Teaching",
+        question: "A client with heart failure is being discharged home. Which dietary instruction adheres to the evidence-based nutritional guidelines in Chapter 29?",
+        options: [
+          { text: "Restrict daily sodium strictly to less than 500 mg per day.", isCorrect: false, rationale: "There is no evidence that restricting sodium below 2 g is helpful; in fact, severe restriction (<2 g) may be harmful." },
+          { text: "Maintain a daily sodium intake of 2 to 3 g as prescribed and avoid table salt.", isCorrect: true, rationale: "Chapter 29 specifies limiting daily sodium to 2 to 3 g (omitting table salt reduces sodium to ~3 g; eliminating high-sodium foods reduces it to 2 g)." },
+          { text: "Replace all seasoning with liberal amounts of commercial salt substitutes.", isCorrect: false, rationale: "Commercial salt substitutes contain potassium chloride, which can trigger lethal hyperkalemia in patients taking ACEIs, ARBs, or spironolactone." },
+          { text: "Consume at least 4 to 5 L of water daily to flush out excess aldosterone.", isCorrect: false, rationale: "Clients should typically limit fluids to 2 L/day to prevent volume overload." }
+        ],
+        hint: "Check the recommended daily sodium intake range in the MAWDS protocol."
+      },
+      {
+        id: 38,
+        type: "mcq",
+        category: "Nursing Safety Priorities",
+        question: "According to the Chapter 29 Action Alert, which weight gain pattern represents a critical symptom of worsening heart failure that must be immediately reported to the primary health care provider?",
+        options: [
+          { text: "1 lb (0.45 kg) over the course of two weeks", isCorrect: false, rationale: "A 1 lb gain over two weeks is within normal baseline physiological variation." },
+          { text: "2 to 3 lb (0.9 to 1.3 kg) in 24 hours or 5 lb (2.2 kg) in 1 week", isCorrect: true, rationale: "The Chapter 29 Action Alert explicitly instructs clients to immediately report a weight gain of 2 to 3 lb (0.9 to 1.3 kg) in 24 hours or 5 lb (2.2 kg) in 1 week." },
+          { text: "10 lb (4.5 kg) over 3 months", isCorrect: false, rationale: "While needing evaluation, acute failure is defined by rapid acute gains within 24 hours or 1 week." },
+          { text: "Any weight gain accompanied by increased urinary output", isCorrect: false, rationale: "Weight gain accompanied by increased diuresis does not represent acute fluid retention." }
+        ],
+        hint: "Memorize the exact 24-hour and 1-week weight gain thresholds from the Action Alert."
+      },
+      {
+        id: 39,
+        type: "sata",
+        category: "Discharge Teaching",
+        question: "Using the standardized MAWDS acronym for heart failure self-management health teaching, which components should the nurse teach the client? Select all that apply.",
+        options: [
+          { text: "M: Medications – Take as prescribed, do not run out, and avoid NSAIDs", isCorrect: true, rationale: "Medications must be maintained consistently, and NSAIDs must be avoided to prevent fluid retention." },
+          { text: "A: Activity – Stay as active as possible, know limits, and be able to converse while exercising", isCorrect: true, rationale: "Activity should be balanced with rest, and clients should be able to converse during exertion." },
+          { text: "W: Weight – Weigh each day at the same time on the same scale", isCorrect: true, rationale: "Daily morning weights before breakfast monitor fluid retention." },
+          { text: "D: Diet – Limit daily sodium to 2 to 3 g and daily fluids to 2 L as prescribed", isCorrect: true, rationale: "Dietary sodium (2-3 g) and fluid restrictions (2 L) decrease cardiac workload." },
+          { text: "S: Symptoms – Note any new or worsening symptoms and notify the provider immediately", isCorrect: true, rationale: "Recognizing early symptoms enables prompt outpatient intervention." }
+        ],
+        hint: "All letters in MAWDS stand for critical pillars of heart failure self-care."
+      },
+      {
+        id: 40,
+        type: "mcq",
+        category: "Pharmacology",
+        question: "Why does the nurse instruct a client with heart failure to strictly avoid over-the-counter nonsteroidal anti-inflammatory drugs (NSAIDs) such as ibuprofen or naproxen?",
+        options: [
+          { text: "NSAIDs cause profound hypoglycemia when taken with heart failure drugs.", isCorrect: false, rationale: "NSAIDs do not cause hypoglycemia." },
+          { text: "NSAIDs cause sodium and fluid retention, peripheral vasoconstriction, and increase toxicity of diuretics and ACEIs.", isCorrect: true, rationale: "Chapter 29 states that long-term or OTC use of NSAIDs causes sodium and water retention, peripheral vasoconstriction, and increases the toxicity of diuretics and ACE inhibitors." },
+          { text: "NSAIDs directly dissolve enteric coatings on oral cardiac glycosides.", isCorrect: false, rationale: "NSAID interaction is physiological and renal, not chemical tablet dissolution." },
+          { text: "NSAIDs cause sudden irreversible hearing loss when paired with beta blockers.", isCorrect: false, rationale: "Ototoxicity is related to rapid IV loop diuretics, not an NSAID-beta blocker interaction." }
+        ],
+        hint: "Think about renal prostaglandin inhibition leading to sodium/water retention and vasoconstriction."
+      },
+      {
+        id: 41,
+        type: "sata",
+        category: "Core Measures",
+        question: "The Joint Commission has established Core Measures for Advanced Certification of Heart Failure in acute care. Which standards are included in these six core measures? Select all that apply.",
+        options: [
+          { text: "Beta blocker prescribed at hospital discharge", isCorrect: true, rationale: "Beta-blocker prescription at discharge is an essential core quality measure." },
+          { text: "Follow-up appointment scheduled within 7 days after discharge", isCorrect: true, rationale: "A scheduled clinical follow-up within 7 days reduces early 30-day readmissions." },
+          { text: "Record of care transmitted to the next level of care within 7 days of discharge", isCorrect: true, rationale: "Care continuity requires transmission of the complete record to home care or next provider within 7 days." },
+          { text: "Documentation of advance care planning discussion and advance directives in medical record", isCorrect: true, rationale: "Both discussing advance care planning and documenting advance directives are required core measures." },
+          { text: "Prescription of high-dose intravenous inotropes for home maintenance", isCorrect: false, rationale: "Routine home IV inotropes are not a core quality measure and are reserved for end-stage palliative care." }
+        ],
+        hint: "Review the six Core Measures for Advanced Certification of Heart Failure box on Page 25."
+      },
+      {
+        id: 42,
+        type: "mcq",
+        category: "Quality Improvement",
+        question: "Which evidence-based educational technique has been specifically demonstrated in clinical studies to significantly decrease 30-day heart failure readmission rates?",
+        options: [
+          { text: "Providing a 50-page complex cardiology textbook to the client at discharge", isCorrect: false, rationale: "Dense technical textbooks overwhelm clients and hinder health literacy." },
+          { text: "Using the teach-back method with an interactive discharge education bundle", isCorrect: true, rationale: "Chapter 29 highlights that utilizing the teach-back method with structured discharge bundles identifies knowledge deficits and directly lowers 30-day readmissions." },
+          { text: "Relying entirely on automated email reminders without verbal contact", isCorrect: false, rationale: "Automated emails lack personalized comprehension assessment." },
+          { text: "Conducting discharge teaching exclusively in the 5 minutes prior to transport", isCorrect: false, rationale: "Rushed teaching on discharge does not allow adequate reinforcement or skill verification." }
+        ],
+        hint: "Which method asks the patient to explain back instructions in their own words?"
+      },
+      {
+        id: 43,
+        type: "mcq",
+        category: "Care Coordination",
+        question: "According to transition management evidence in Chapter 29, which post-discharge nursing visit timeline has proven effective in reducing hospital readmission rates for heart failure?",
+        options: [
+          { text: "A single home visit at 30 days post-discharge", isCorrect: false, rationale: "Waiting 30 days misses the vulnerable early post-discharge window." },
+          { text: "At least one visit on the day of discharge and at least three nursing visits in the first post-hospital week", isCorrect: true, rationale: "Early and intensive nursing care—one visit on the day of discharge and at least three visits within the first post-hospital week—significantly curtails readmissions." },
+          { text: "One telephone check-in scheduled 6 months after discharge", isCorrect: false, rationale: "Six months is far too delayed to assist transition." },
+          { text: "Weekly visits only after the client demonstrates worsening edema", isCorrect: false, rationale: "Care transition must be proactive, not reactive to decompensation." }
+        ],
+        hint: "Identify the intensive schedule during the critical first post-hospital week."
+      },
+      {
+        id: 44,
+        type: "mcq",
+        category: "Cardiovascular Conditions",
+        question: "A client who recently recovered from an upper respiratory tract infection with group A beta-hemolytic streptococcus presents with signs of cardiac valve damage. Which condition does the nurse suspect?",
+        options: [
+          { text: "Dilated cardiomyopathy (DCM)", isCorrect: false, rationale: "DCM is ventricular dilation and weakening, not a direct post-streptococcal autoimmune complication." },
+          { text: "Rheumatic carditis", isCorrect: true, rationale: "Rheumatic carditis is a sensitivity response that develops after an upper respiratory infection with group A beta-hemolytic streptococci, causing inflammatory damage to heart valves." },
+          { text: "Hypertrophic cardiomyopathy (HCM)", isCorrect: false, rationale: "HCM is a genetic condition causing asymmetric ventricular hypertrophy." },
+          { text: "Cardiac tamponade", isCorrect: false, rationale: "Tamponade is acute compression from pericardial fluid, not post-streptococcal valvulitis." }
+        ],
+        hint: "Connect group A beta-hemolytic streptococcus to delayed cardiac valvular damage."
+      },
+      {
+        id: 45,
+        type: "mcq",
+        category: "Cardiovascular Conditions",
+        question: "During a physical exam of a client with suspected infective endocarditis, the nurse inspects the client's hands and identifies black longitudinal lines on the distal nail beds. What is the clinical term for this finding?",
+        options: [
+          { text: "Petechiae", isCorrect: false, rationale: "Petechiae are pinpoint red or purple spots on skin or mucous membranes." },
+          { text: "Splinter hemorrhages", isCorrect: true, rationale: "Splinter hemorrhages are black longitudinal lines or red streaks seen in the distal third of nail beds in infective endocarditis." },
+          { text: "Pulsus alternans", isCorrect: false, rationale: "Pulsus alternans is alternating strong and weak peripheral pulses." },
+          { text: "Hepatojugular reflux", isCorrect: false, rationale: "Hepatojugular reflux is jugular vein distention produced by pressing over the liver." }
+        ],
+        hint: "Recall the key term describing linear dark streaks under the distal nails."
+      },
+      {
+        id: 46,
+        type: "mcq",
+        category: "Cardiovascular Conditions",
+        question: "A client with acute pericarditis develops accumulating fluid in the pericardial space that compresses the atria and ventricles, severely impairing diastolic filling and reducing cardiac output. What emergency condition has occurred?",
+        options: [
+          { text: "Cardiac tamponade", isCorrect: true, rationale: "Cardiac tamponade is compression of the myocardium by accumulated pericardial fluid, preventing adequate ventricular filling and drastically compromising cardiac output." },
+          { text: "Aortic regurgitation", isCorrect: false, rationale: "Aortic regurgitation is backwards blood leakage from the aorta into the left ventricle." },
+          { text: "Ventricular remodeling", isCorrect: false, rationale: "Remodeling is cellular architectural change, not acute pericardial compression." },
+          { text: "Cardiomegaly", isCorrect: false, rationale: "Cardiomegaly is chronic heart enlargement, not acute fluid strangulation of the heart." }
+        ],
+        hint: "Look for the key term defined as myocardial compression by fluid in the pericardial sac."
+      },
+      {
+        id: 47,
+        type: "mcq",
+        category: "Cardiovascular Conditions",
+        question: "Which emergency procedure should the nurse prepare to assist with when a client develops life-threatening cardiac tamponade?",
+        options: [
+          { text: "Endoventricular circular patch cardioplasty", isCorrect: false, rationale: "Cardioplasty is elective surgical reshaping of a dilated left ventricle." },
+          { text: "Pericardiocentesis", isCorrect: true, rationale: "Pericardiocentesis is the emergency withdrawal of pericardial fluid using a catheter inserted into the pericardial space to relieve compression." },
+          { text: "Insertion of a CardioMEMS pulmonary transducer", isCorrect: false, rationale: "CardioMEMS is an ambulatory pressure monitor, not an acute decompression procedure." },
+          { text: "Biventricular pacemaker placement", isCorrect: false, rationale: "Biventricular pacing treats conduction delay and dyssynchrony, not fluid compression." }
+        ],
+        hint: "Name the needle and catheter aspiration procedure used to evacuate fluid from the pericardial sac."
+      },
+      {
+        id: 48,
+        type: "mcq",
+        category: "Cardiovascular Conditions",
+        question: "Which form of cardiomyopathy is characterized by stiff, rigid ventricular walls that impede diastolic filling while the contractile systolic function of the muscle is relatively maintained?",
+        options: [
+          { text: "Dilated cardiomyopathy", isCorrect: false, rationale: "Dilated cardiomyopathy involves enlarged, flabby ventricles with impaired systolic contraction." },
+          { text: "Restrictive cardiomyopathy", isCorrect: true, rationale: "Restrictive cardiomyopathy is characterized by rigid ventricular walls that restrict diastolic filling while systolic contraction is often preserved." },
+          { text: "Hypertrophic cardiomyopathy", isCorrect: false, rationale: "Hypertrophic cardiomyopathy involves massive thickening of the ventricular septum and myocardium." },
+          { text: "High-output cardiomyopathy", isCorrect: false, rationale: "High-output states involve elevated cardiac output due to hyperkinetic systemic demands." }
+        ],
+        hint: "Identify the cardiomyopathy whose name describes the inability of ventricles to relax and expand."
+      },
+      {
+        id: 49,
+        type: "mcq",
+        category: "Pharmacology",
+        question: "A client with heart failure has been taking furosemide 40 mg daily and spironolactone 25 mg daily. The nurse reviews laboratory results: Potassium 3.2 mEq/L, Sodium 138 mEq/L, Creatinine 1.0 mg/dL. What should the nurse anticipate?",
+        options: [
+          { text: "Immediately discontinuing the spironolactone due to hyperkalemia risk", isCorrect: false, rationale: "The client is hypokalemic (3.2 mEq/L), not hyperkalemic." },
+          { text: "The health care provider prescribing a potassium supplement to bring levels above 4.0 mEq/L", isCorrect: true, rationale: "In heart failure, serum potassium is maintained at or above 4.0 mEq/L to prevent fatal dysrhythmias and digitalis toxicity. Supplements are indicated when potassium drops below 4.0 mEq/L." },
+          { text: "Restricting dietary potassium and stopping all fruit intake", isCorrect: false, rationale: "The client needs potassium repletion, not dietary potassium restriction." },
+          { text: "Administering sodium polystyrene sulfonate orally", isCorrect: false, rationale: "Sodium polystyrene sulfonate lowers potassium and is used for hyperkalemia." }
+        ],
+        hint: "Recall the target minimum serum potassium concentration (>4.0 mEq/L) for heart failure patients."
+      },
+      {
+        id: 50,
+        type: "sbar_case",
+        category: "Case Study / Clinical Judgment",
+        question: "Review the unfolding SBAR report provided above. Based on the client's clinical presentation, vital signs, and physical cues, which prioritized nursing actions are indicated? Select all that apply.",
+        sbar: {
+          situation: "Mr. J, a 72-year-old male admitted 2 days ago for heart failure exacerbation, has developed acute severe respiratory distress, air hunger, and agitation at 0200.",
+          background: "History of systolic heart failure (EF 30%), hypertension, and CAD. Current medications include enalapril, metoprolol succinate, and furosemide. Infusions: 0.9% Normal Saline at 100 mL/hr.",
+          assessment: "BP 154/92 mm Hg, HR 118 sinus tachycardia, RR 36/min and labored, SpO2 81% on room air. Auscultation reveals coarse bubbling crackles throughout both lung fields ascending to the apices. Patient has a productive cough with pink, frothy sputum. Skin is cool, pale, and diaphoretic.",
+          recommendation: "Immediate bedside evaluation for acute pulmonary edema; transfer to ICU; emergent interventions to promote gas exchange and decrease preload/afterload."
+        },
+        options: [
+          { text: "Immediately place the client in high-Fowler's position with legs dependent and apply high-flow oxygen via nonrebreather mask.", isCorrect: true, rationale: "High-Fowler's with legs dangling decreases venous return (preload) and optimizes chest expansion. High-flow oxygen via nonrebreather mask combats severe hypoxia." },
+          { text: "Immediately stop the 0.9% Normal Saline intravenous infusion.", isCorrect: true, rationale: "Continued isotonic saline infusion exacerbates fluid overload and worsens life-threatening pulmonary capillary transudation." },
+          { text: "Prepare to administer IV push furosemide slowly over 1 to 2 minutes as ordered.", isCorrect: true, rationale: "Rapid-acting IV loop diuretics promote rapid fluid excretion. Slow injection over 1-2 minutes prevents ototoxicity." },
+          { text: "Place the client in Trendelenburg position and rapidly bolus 500 mL normal saline.", isCorrect: false, rationale: "Trendelenburg position and fluid bolusing would worsen alveolar flooding and precipitate immediate asphyxiation." },
+          { text: "Administer sublingual nitroglycerin every 5 minutes (up to 3 doses) while monitoring BP, since SBP >100 mm Hg.", isCorrect: true, rationale: "Sublingual nitroglycerin reduces both preload and afterload rapidly when SBP >100 mm Hg, easing the workload of the failing left ventricle." }
+        ],
+        hint: "Analyze the acute pulmonary edema cues: SBP is 154 (>100), lungs have ascending crackles with frothy sputum, and normal saline is running."
+      }
+    ];
+
+    // State Management
+    let examQuestions = [...rawQuestions];
+    let currentIdx = 0;
+    let userAnswers = {}; // { questionId: selectedIndex or [indices] }
+    let score = 0;
+    let missedQuestionIds = [];
+    let isRetakeMissedMode = false;
+
+    // DOM Elements
+    const introCard = document.getElementById("intro-card");
+    const quizCard = document.getElementById("quiz-card");
+    const resultsCard = document.getElementById("results-card");
+    const startExamBtn = document.getElementById("start-exam-btn");
+
+    const headerProgress = document.getElementById("header-progress");
+    const progressBar = document.getElementById("progress-bar");
+    const headerScore = document.getElementById("header-score");
+
+    const questionBadge = document.getElementById("question-badge");
+    const questionTypeBadge = document.getElementById("question-type-badge");
+    const questionCategory = document.getElementById("question-category");
+    const questionText = document.getElementById("question-text");
+    const optionsContainer = document.getElementById("options-container");
+
+    const sbarContainer = document.getElementById("sbar-container");
+    const sbarContent = document.getElementById("sbar-content");
+
+    const feedbackPanel = document.getElementById("feedback-panel");
+    const feedbackTitle = document.getElementById("feedback-title");
+    const feedbackBody = document.getElementById("feedback-body");
+
+    const hintToggleBtn = document.getElementById("hint-toggle-btn");
+    const hintBox = document.getElementById("hint-box");
+    const hintText = document.getElementById("hint-text");
+
+    const submitAnswerBtn = document.getElementById("submit-answer-btn");
+    const nextQuestionBtn = document.getElementById("next-question-btn");
+
+    const retakeAllBtn = document.getElementById("retake-all-btn");
+    const retakeMissedBtn = document.getElementById("retake-missed-btn");
+    const missedCountBtn = document.getElementById("missed-count-btn");
+    const missedList = document.getElementById("missed-list");
+
+    // Initialize Exam
+    function initExam(questionsList, isMissed = false) {
+      examQuestions = questionsList;
+      currentIdx = 0;
+      userAnswers = {};
+      score = 0;
+      missedQuestionIds = [];
+      isRetakeMissedMode = isMissed;
+
+      introCard.classList.add("hidden");
+      resultsCard.classList.add("hidden");
+      quizCard.classList.remove("hidden");
+
+      updateHeader();
+      renderQuestion();
+    }
+
+    function updateHeader() {
+      const total = examQuestions.length;
+      const answeredCount = Object.keys(userAnswers).length;
+      headerProgress.innerText = `Question ${currentIdx + 1} of ${total}`;
+      const pct = Math.round(((currentIdx + 1) / total) * 100);
+      progressBar.style.width = `${pct}%`;
+
+      const scorePct = answeredCount > 0 ? Math.round((score / answeredCount) * 100) : 0;
+      headerScore.innerText = `${score} / ${answeredCount} (${scorePct}%)`;
+    }
+
+    function renderQuestion() {
+      const q = examQuestions[currentIdx];
+      questionBadge.innerText = `Question ${currentIdx + 1} of ${examQuestions.length}`;
+      questionCategory.innerText = q.category || "Cardiac Care";
+      questionTypeBadge.innerText = q.type === "sata" || q.type === "sbar_case" ? "Select All That Apply (SATA)" : "Multiple Choice";
+      questionText.innerText = q.question;
+
+      // Handle SBAR case study display
+      if (q.sbar) {
+        sbarContainer.classList.remove("hidden");
+        sbarContent.innerHTML = `
+          <div class="bg-white p-3 rounded border-l-4 border-blue-600 shadow-sm">
+            <span class="font-bold text-blue-900 block text-xs uppercase mb-1">Situation</span>
+            <p class="text-slate-700">${q.sbar.situation}</p>
+          </div>
+          <div class="bg-white p-3 rounded border-l-4 border-amber-500 shadow-sm">
+            <span class="font-bold text-amber-900 block text-xs uppercase mb-1">Background</span>
+            <p class="text-slate-700">${q.sbar.background}</p>
+          </div>
+          <div class="bg-white p-3 rounded border-l-4 border-red-500 shadow-sm">
+            <span class="font-bold text-red-900 block text-xs uppercase mb-1">Assessment</span>
+            <p class="text-slate-700">${q.sbar.assessment}</p>
+          </div>
+          <div class="bg-white p-3 rounded border-l-4 border-emerald-600 shadow-sm">
+            <span class="font-bold text-emerald-900 block text-xs uppercase mb-1">Recommendation</span>
+            <p class="text-slate-700">${q.sbar.recommendation}</p>
+          </div>
+        `;
+      } else {
+        sbarContainer.classList.add("hidden");
+      }
+
+      // Hint setup
+      hintBox.classList.add("hidden");
+      hintText.innerText = q.hint || "Consider pathophysiology, safety priorities, and medication mechanisms.";
+
+      // Feedback Reset
+      feedbackPanel.classList.add("hidden");
+      feedbackPanel.className = "hidden rounded-xl p-5 mb-6 text-sm transition-all duration-300";
+      submitAnswerBtn.classList.remove("hidden");
+      nextQuestionBtn.classList.add("hidden");
+
+      // Render Options
+      optionsContainer.innerHTML = "";
+      const isMulti = q.type === "sata" || q.type === "sbar_case";
+
+      q.options.forEach((opt, idx) => {
+        const optWrapper = document.createElement("label");
+        optWrapper.className = `flex items-start p-4 rounded-xl border border-slate-200 hover:border-blue-300 hover:bg-slate-50 cursor-pointer transition text-sm text-slate-800 select-none group`;
+        optWrapper.id = `option-label-${idx}`;
+
+        const input = document.createElement("input");
+        input.type = isMulti ? "checkbox" : "radio";
+        input.name = `question-${q.id}`;
+        input.value = idx;
+        input.className = `mt-1 h-4 w-4 text-blue-600 border-slate-300 focus:ring-blue-500 rounded${isMulti ? '' : '-full'} mr-3.5 transition flex-shrink-0`;
+
+        const textDiv = document.createElement("div");
+        textDiv.className = "flex-1 leading-relaxed";
+        textDiv.innerText = opt.text;
+
+        optWrapper.appendChild(input);
+        optWrapper.appendChild(textDiv);
+        optionsContainer.appendChild(optWrapper);
+      });
+    }
+
+    // Process Answer Submission
+    submitAnswerBtn.addEventListener("click", () => {
+      const q = examQuestions[currentIdx];
+      const isMulti = q.type === "sata" || q.type === "sbar_case";
+      let selected = [];
+
+      if (isMulti) {
+        const checkedBoxes = optionsContainer.querySelectorAll('input[type="checkbox"]:checked');
+        selected = Array.from(checkedBoxes).map(cb => parseInt(cb.value));
+      } else {
+        const checkedRadio = optionsContainer.querySelector('input[type="radio"]:checked');
+        if (checkedRadio) selected = [parseInt(checkedRadio.value)];
+      }
+
+      if (selected.length === 0) {
+        alert("Please make a selection before submitting.");
+        return;
+      }
+
+      // Record answer
+      userAnswers[q.id] = selected;
+
+      // Determine correctness
+      const correctIndices = q.options
+        .map((opt, idx) => opt.isCorrect ? idx : -1)
+        .filter(idx => idx !== -1);
+
+      const isCorrect = isMulti
+        ? correctIndices.length === selected.length && correctIndices.every(idx => selected.includes(idx))
+        : selected[0] === correctIndices[0];
+
+      if (isCorrect) {
+        score++;
+      } else {
+        if (!missedQuestionIds.includes(q.id)) {
+          missedQuestionIds.push(q.id);
+        }
+      }
+
+      // Disable inputs
+      optionsContainer.querySelectorAll('input').forEach(inp => inp.disabled = true);
+
+      // Highlight options
+      q.options.forEach((opt, idx) => {
+        const label = document.getElementById(`option-label-${idx}`);
+        if (opt.isCorrect) {
+          label.classList.remove("hover:bg-slate-50", "border-slate-200");
+          label.classList.add("bg-emerald-50", "border-emerald-500", "text-emerald-950", "font-medium");
+        } else if (selected.includes(idx) && !opt.isCorrect) {
+          label.classList.remove("hover:bg-slate-50", "border-slate-200");
+          label.classList.add("bg-red-50", "border-red-400", "text-red-950");
+        }
+      });
+
+      // Show Feedback Panel
+      feedbackPanel.classList.remove("hidden");
+      if (isCorrect) {
+        feedbackPanel.classList.add("bg-emerald-50", "border", "border-emerald-300");
+        feedbackTitle.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 mr-2 text-lg"></i><span class="text-emerald-900">Correct! Excellent Clinical Reasoning</span>`;
+      } else {
+        feedbackPanel.classList.add("bg-red-50", "border", "border-red-300");
+        feedbackTitle.innerHTML = `<i class="fa-solid fa-circle-xmark text-red-600 mr-2 text-lg"></i><span class="text-red-900">Incorrect. Review Rationales Below:</span>`;
+      }
+
+      // Detailed rationales for all options
+      let rationaleHTML = `<div class="mt-2 space-y-2">`;
+      q.options.forEach((opt, idx) => {
+        const statusBadge = opt.isCorrect 
+          ? `<span class="inline-block px-1.5 py-0.5 rounded text-[11px] font-bold bg-emerald-200 text-emerald-900 mr-1.5">CORRECT</span>`
+          : `<span class="inline-block px-1.5 py-0.5 rounded text-[11px] font-bold bg-slate-200 text-slate-800 mr-1.5">INCORRECT</span>`;
+        rationaleHTML += `
+          <div class="p-2.5 rounded-lg ${opt.isCorrect ? 'bg-white/80 border border-emerald-200' : 'bg-white/50 border border-slate-200'}">
+            <p class="font-semibold text-xs text-slate-800 mb-1">${statusBadge} ${opt.text}</p>
+            <p class="text-xs text-slate-600 leading-relaxed">${opt.rationale}</p>
+          </div>
+        `;
+      });
+      rationaleHTML += `</div>`;
+      feedbackBody.innerHTML = rationaleHTML;
+
+      // Update UI buttons
+      submitAnswerBtn.classList.add("hidden");
+      nextQuestionBtn.classList.remove("hidden");
+      updateHeader();
+    });
+
+    // Advance Question
+    nextQuestionBtn.addEventListener("click", () => {
+      currentIdx++;
+      if (currentIdx < examQuestions.length) {
+        updateHeader();
+        renderQuestion();
+      } else {
+        showResults();
+      }
+    });
+
+    // Toggle Hint
+    hintToggleBtn.addEventListener("click", () => {
+      hintBox.classList.toggle("hidden");
+    });
+
+    // Show Results
+    function showResults() {
+      quizCard.classList.add("hidden");
+      resultsCard.classList.remove("hidden");
+
+      const total = examQuestions.length;
+      const pct = Math.round((score / total) * 100);
+
+      document.getElementById("res-total").innerText = total;
+      document.getElementById("res-correct").innerText = score;
+      document.getElementById("res-missed").innerText = total - score;
+      document.getElementById("res-percentage").innerText = `${pct}%`;
+      missedCountBtn.innerText = missedQuestionIds.length;
+
+      const statusMsg = document.getElementById("res-status-msg");
+      const resIcon = document.getElementById("result-icon");
+      const iconWrapper = document.getElementById("result-icon-wrapper");
+
+      if (pct >= 85) {
+        statusMsg.innerText = "Mastery Achieved: Outstanding NCLEX Readiness!";
+        statusMsg.className = "text-xs font-bold text-emerald-700";
+        iconWrapper.className = "w-20 h-20 rounded-full mx-auto flex items-center justify-center text-4xl mb-4 bg-emerald-100 text-emerald-600";
+        resIcon.className = "fa-solid fa-trophy";
+      } else if (pct >= 75) {
+        statusMsg.innerText = "Competent: Meeting the NCLEX Standard Benchmark.";
+        statusMsg.className = "text-xs font-bold text-blue-700";
+        iconWrapper.className = "w-20 h-20 rounded-full mx-auto flex items-center justify-center text-4xl mb-4 bg-blue-100 text-blue-600";
+        resIcon.className = "fa-solid fa-circle-check";
+      } else {
+        statusMsg.innerText = "Remediation Recommended: Re-study Chapter 29 concepts and retake missed items.";
+        statusMsg.className = "text-xs font-bold text-red-600";
+        iconWrapper.className = "w-20 h-20 rounded-full mx-auto flex items-center justify-center text-4xl mb-4 bg-red-100 text-red-600";
+        resIcon.className = "fa-solid fa-triangle-exclamation";
+      }
+
+      retakeMissedBtn.disabled = missedQuestionIds.length === 0;
+
+      // Populate review section
+      missedList.innerHTML = "";
+      examQuestions.forEach((q, idx) => {
+        const wasMissed = missedQuestionIds.includes(q.id);
+        const itemCard = document.createElement("div");
+        itemCard.className = `p-4 rounded-xl border ${wasMissed ? 'border-red-200 bg-red-50/50' : 'border-emerald-200 bg-emerald-50/30'}`;
+
+        let optList = "";
+        q.options.forEach(o => {
+          if (o.isCorrect) {
+            optList += `<div class="text-xs text-emerald-800 font-medium mt-1"><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i><strong>Key Answer:</strong> ${o.text}</div>`;
+          }
+        });
+
+        itemCard.innerHTML = `
+          <div class="flex items-center justify-between text-xs font-bold mb-1">
+            <span class="${wasMissed ? 'text-red-700' : 'text-emerald-700'}">Question ${idx + 1} (${q.type === 'sata' ? 'SATA' : 'MCQ'})</span>
+            <span class="px-2 py-0.5 rounded text-[10px] ${wasMissed ? 'bg-red-200 text-red-900' : 'bg-emerald-200 text-emerald-900'}">${wasMissed ? 'MISSED' : 'CORRECT'}</span>
+          </div>
+          <p class="text-xs font-semibold text-slate-800">${q.question}</p>
+          ${optList}
+        `;
+        missedList.appendChild(itemCard);
+      });
+    }
+
+    // Retake Listeners
+    startExamBtn.addEventListener("click", () => initExam(rawQuestions, false));
+
+    retakeAllBtn.addEventListener("click", () => {
+      initExam(rawQuestions, false);
+    });
+
+    retakeMissedBtn.addEventListener("click", () => {
+      if (missedQuestionIds.length === 0) return;
+      const filtered = rawQuestions.filter(q => missedQuestionIds.includes(q.id));
+      initExam(filtered, true);
+    });
+  </script>
+</body>
+</html>
+```eof
+
+### Summary of Features
+- **All 50 NCLEX Questions & Case Study**: Includes comprehensive coverage of systolic vs. diastolic HF, forward vs. backward failure, RAAS/SNS compensatory pathways, natriuretic peptides (BNP), microalbuminuria, diuretics (loop vs. thiazide vs. aldosterone antagonists), ACEIs/ARBs/ARNIs (including the 36-hour washout rule and first-dose hypotension positioning), beta-blocker initiation targets, ivabradine, SGLT2 inhibitors, inotropes (dobutamine, milrinone), cardiac resynchronization (CRT), ventricular assist devices (VADs), CardioMEMS, acute pulmonary edema positioning and emergency pharmacotherapy, The Joint Commission core measures, and MAWDS self-management education.
+- **Unfolding SBAR Case Study**: Question 50 features a complete clinical Situation, Background, Assessment, and Recommendation emergency case study.
+- **Dual Retake Functionality**: When you complete the test, you can review your score breakdown, view option-by-option rationales, choose to **Retake Full 50 Questions**, or drill exclusively on **Retake Missed Questions Only**.
